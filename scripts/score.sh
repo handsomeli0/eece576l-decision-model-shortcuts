@@ -6,6 +6,7 @@
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
 name=$1; run=$2; exp=$3; split=${4:-dev}
+[ "$run" != qwen ] && [ -e "$run" ] && run=$(realpath "$run")   # kev.benchmark runs from $KEV, so a local run needs an absolute path
 [ "$split" = dev ] || [ "$split" = test ] || { echo "split is dev or test" >&2; exit 1; }
 mkdir -p "$PROJ/runs/$exp" "$PROJ/results/$exp"
 for tag in dv7-$split tv4-$split; do
