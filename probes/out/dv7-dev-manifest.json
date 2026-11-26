@@ -1,0 +1,50 @@
+{
+  "suite": "v7/decision-v7",
+  "split": "development",
+  "fr": {
+    "records": 11904,
+    "questions": 496,
+    "by_task": {
+      "agnews_yn": 3840,
+      "yelp_yn": 1920,
+      "imdb": 1920,
+      "contrastive_return_window": 576,
+      "contrastive_age_eligibility": 576,
+      "composition_atom": 384,
+      "composition_negation": 384,
+      "composition_conjunction": 384,
+      "composition_disjunction": 384,
+      "composition_exception": 384,
+      "composition_conditional": 384,
+      "composition_nested_and": 384,
+      "composition_nested_or": 384
+    },
+    "by_pair_cat": {
+      "kev_seen": 1984,
+      "a1_train": 1984,
+      "heldout": 2976,
+      "neutral": 1984,
+      "random_test": 2976
+    }
+  },
+  "pg": {
+    "records": 1472,
+    "questions": 368,
+    "by_task": {
+      "agnews_yn": 640,
+      "yelp_yn": 320,
+      "imdb": 320,
+      "contrastive_return_window": 96,
+      "contrastive_age_eligibility": 96
+    },
+    "by_style": {
+      "orig": 368,
+      "S1": 368,
+      "S2": 368,
+      "S3": 368
+    }
+  },
+  "binary_questions_skipped": {
+    "boolq": 80
+  }
+}

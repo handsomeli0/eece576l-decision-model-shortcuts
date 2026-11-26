@@ -1,0 +1,83 @@
+{
+  "_doc": "Hand-written templates. 'definitions': option definitions for yes/no sources whose records carry none ({T}/{Q} filled from the question). 'questions': per source, a regex that matches the source's fixed question, then S1/S2/S3 negations (gold label flips) and P1/P2 same-polarity paraphrases (gold label kept). S3 is held out of training. boolq has no S3: its natural questions need hand negation (deferred).",
+  "definitions": {
+    "agnews_yn": {"true": "The article is mainly about {T}", "false": "The article is mainly about a different topic"},
+    "contrastive_return_window": {"true": "The request falls inside the policy's return window", "false": "The request falls outside the policy's return window"},
+    "contrastive_age_eligibility": {"true": "The applicant meets the policy's eligibility rules", "false": "The applicant fails the policy's eligibility rules"},
+    "qnli": {"true": "The sentence contains the answer to the question", "false": "The sentence lacks the answer to the question"},
+    "contrastive_authorization": {"true": "The policy authorizes the refund", "false": "The policy withholds authorization for the refund"}
+  },
+  "questions": {
+    "agnews_yn": {
+      "pattern": "^Is this article about (?P<T>.+)\\?$",
+      "S1": "Is this article not about {T}?",
+      "S2": "Is it false that this article is about {T}?",
+      "S3": "Is this article about a topic other than {T}?",
+      "P1": "Does this article cover {T}?",
+      "P2": "Is {T} the main topic of this article?"
+    },
+    "yelp_yn": {
+      "pattern": "^Would this reviewer recommend the business\\?$",
+      "S1": "Would this reviewer not recommend the business?",
+      "S2": "Is it false that this reviewer would recommend the business?",
+      "S3": "Is this reviewer's overall view of the business negative or mixed?",
+      "P1": "Would this reviewer suggest the business to others?",
+      "P2": "Is this reviewer likely to recommend the business?"
+    },
+    "imdb": {
+      "pattern": "^Is this movie review positive\\?$",
+      "S1": "Is this movie review not positive?",
+      "S2": "Is it false that this movie review is positive?",
+      "S3": "Did the reviewer dislike the film overall?",
+      "P1": "Is this a favorable movie review?",
+      "P2": "Did the reviewer like the film overall?"
+    },
+    "contrastive_return_window": {
+      "pattern": "^Is this return request within the policy window\\?$",
+      "S1": "Is this return request not within the policy window?",
+      "S2": "Is it false that this return request is within the policy window?",
+      "S3": "Is this return request outside the policy window?",
+      "P1": "Does this return request fall within the policy window?",
+      "P2": "Is this return request inside the allowed return period?"
+    },
+    "contrastive_age_eligibility": {
+      "pattern": "^Is the applicant eligible\\?$",
+      "S1": "Is the applicant not eligible?",
+      "S2": "Is it false that the applicant is eligible?",
+      "S3": "Is the applicant ineligible?",
+      "P1": "Does the applicant qualify?",
+      "P2": "Does the applicant meet the eligibility rules?"
+    },
+    "boolq": {
+      "pattern": "^(?P<Q>.+?)\\??$",
+      "S1": "Is the answer to the following question no? {Q}?",
+      "S2": "Is it false that the answer to the following question is yes? {Q}?",
+      "P1": "Based on the passage, {Q}?",
+      "P2": "{Q}? Use only the passage."
+    },
+    "tweet_offensive": {
+      "pattern": "^Is this post offensive\\?$",
+      "S1": "Is this post not offensive?",
+      "S2": "Is it false that this post is offensive?",
+      "S3": "Is this post free of offensive content?"
+    },
+    "qnli": {
+      "pattern": "^Does the sentence contain the answer to this question: (?P<Q>\".*\")$",
+      "S1": "Does the sentence not contain the answer to this question: {Q}",
+      "S2": "Is it false that the sentence contains the answer to this question: {Q}",
+      "S3": "Is the sentence missing the answer to this question: {Q}"
+    },
+    "paws": {
+      "pattern": "^Does this sentence mean the same thing: (?P<Q>\".*\")$",
+      "S1": "Does this sentence not mean the same thing: {Q}",
+      "S2": "Is it false that this sentence means the same thing: {Q}",
+      "S3": "Does this sentence mean something different from: {Q}"
+    },
+    "contrastive_authorization": {
+      "pattern": "^Is the refund authorized\\?$",
+      "S1": "Is the refund not authorized?",
+      "S2": "Is it false that the refund is authorized?",
+      "S3": "Is the refund unauthorized?"
+    }
+  }
+}

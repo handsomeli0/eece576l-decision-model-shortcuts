@@ -1,0 +1,13 @@
+{
+  "_doc": "Fixed before any data is generated. Name pairs are [negative-side name, positive-side name]. A1 trains on 'kev_seen' + 'a1_train' polar pairs and on fresh random 5-letter strings (never the 'random_test' ones). 'heldout' pairs and style S3 never appear in training. Neutral pairs avoid A/B so they cannot collide with the Qwen readout's answer letters.",
+  "name_pairs": {
+    "kev_seen": [["no", "yes"], ["reject", "accept"]],
+    "a1_train": [["false", "true"], ["fail", "pass"]],
+    "heldout": [["absent", "present"], ["denied", "approved"], ["invalid", "valid"]],
+    "neutral": [["0", "1"], ["P", "Q"]],
+    "random_test": [["qzvkm", "trbxl"], ["wjfyd", "hnpcg"], ["mxlqv", "dkzrw"]]
+  },
+  "negation_styles": {"train": ["S1", "S2"], "heldout": ["S3"]},
+  "paraphrase_styles": ["P1", "P2"],
+  "a1": {"rho": 0.5, "p_random": 0.5, "random_len": 5}
+}

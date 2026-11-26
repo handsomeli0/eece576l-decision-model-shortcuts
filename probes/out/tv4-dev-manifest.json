@@ -1,0 +1,41 @@
+{
+  "suite": "v4/transfer-v4",
+  "split": "development",
+  "fr": {
+    "records": 9024,
+    "questions": 376,
+    "by_task": {
+      "tweet_offensive": 1920,
+      "qnli": 1920,
+      "paws": 1920,
+      "contrastive_authorization": 960,
+      "composition_held_and_or": 768,
+      "composition_held_or_not": 768,
+      "composition_held_conditional": 768
+    },
+    "by_pair_cat": {
+      "kev_seen": 1504,
+      "a1_train": 1504,
+      "heldout": 2256,
+      "neutral": 1504,
+      "random_test": 2256
+    }
+  },
+  "pg": {
+    "records": 1120,
+    "questions": 280,
+    "by_task": {
+      "tweet_offensive": 320,
+      "qnli": 320,
+      "paws": 320,
+      "contrastive_authorization": 160
+    },
+    "by_style": {
+      "orig": 280,
+      "S1": 280,
+      "S2": 280,
+      "S3": 280
+    }
+  },
+  "binary_questions_skipped": {}
+}

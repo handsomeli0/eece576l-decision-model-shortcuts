@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+# large or regenerated (scripts/prepare.sh rebuilds them deterministically)
+data/
+probes/out/*.jsonl
+runs/

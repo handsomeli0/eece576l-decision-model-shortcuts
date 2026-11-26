@@ -1,0 +1,42 @@
+{
+  "suite": "v7/decision-v7",
+  "split": "test",
+  "fr": {
+    "records": 9600,
+    "questions": 400,
+    "by_task": {
+      "agnews_yn": 3840,
+      "yelp_yn": 1920,
+      "imdb": 1920,
+      "contrastive_return_window": 960,
+      "contrastive_age_eligibility": 960
+    },
+    "by_pair_cat": {
+      "kev_seen": 1600,
+      "a1_train": 1600,
+      "heldout": 2400,
+      "neutral": 1600,
+      "random_test": 2400
+    }
+  },
+  "pg": {
+    "records": 1600,
+    "questions": 400,
+    "by_task": {
+      "agnews_yn": 640,
+      "yelp_yn": 320,
+      "imdb": 320,
+      "contrastive_return_window": 160,
+      "contrastive_age_eligibility": 160
+    },
+    "by_style": {
+      "orig": 400,
+      "S1": 400,
+      "S2": 400,
+      "S3": 400
+    }
+  },
+  "binary_questions_skipped": {
+    "boolq": 80
+  }
+}
