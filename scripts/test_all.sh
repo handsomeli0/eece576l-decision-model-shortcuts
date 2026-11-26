@@ -24,5 +24,4 @@ for pair in "v7base=$V7BASE" "baseline=$BASELINE" "a1=$T/a1-s2" "a2=$T/a2-s2" "a
     (cd "$KEV" && python -m kev.benchmark --run "$run" --suite "$suite" --allow-test --device cuda --out "$out") | tail -3
   done
 done
-python analysis/table.py --exp e2 --split test --reference baseline --reference-exp e1
-python analysis/figures.py --table results/e2/table-test-vs-baseline.json --out results/figures
+scripts/tables.sh test

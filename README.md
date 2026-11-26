@@ -72,6 +72,7 @@ scripts/e1.sh dev                  # E1 on the development splits
 scripts/train.sh a1                # E2 variants: a1, a2, a1a2, c1 (one at a time, about 2 h each on an 8 GB GPU)
 scripts/score.sh a1 runs/train/a1-s2 e2 dev
 python analysis/table.py --exp e2 --split dev --reference baseline --reference-exp e1
+scripts/tables.sh dev               # every table, including slices (policy, nodef, ...), and the figures
 ```
 
 The test splits are scored once, at the end, for every model: `scripts/test_all.sh` (about 5 h on an 8 GB GPU).
