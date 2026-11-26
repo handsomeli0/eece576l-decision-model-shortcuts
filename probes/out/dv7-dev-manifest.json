@@ -1,6 +1,7 @@
 {
   "suite": "v7/decision-v7",
   "split": "development",
+  "source_records": 1024,
   "fr": {
     "records": 11904,
     "questions": 496,

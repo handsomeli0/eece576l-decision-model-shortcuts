@@ -1,6 +1,7 @@
 {
   "suite": "v4/transfer-v4",
   "split": "test",
+  "source_records": 656,
   "fr": {
     "records": 9024,
     "questions": 376,

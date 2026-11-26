@@ -86,7 +86,8 @@ def main():
     write_jsonl(out / f"{a.tag}-fr.jsonl", fr)
     write_jsonl(out / f"{a.tag}-pg.jsonl", pg)
     count = lambda rs, key: dict(collections.Counter(r["_meta"][key] for r in rs))
-    manifest = {"suite": "/".join(Path(a.suite).expanduser().parts[-2:]), "split": a.split,   # e.g. v7/decision-v7, the same on every machine "source_records": len(records),
+    # the suite as e.g. "v7/decision-v7", so the manifest is the same on every machine
+    manifest = {"suite": "/".join(Path(a.suite).expanduser().parts[-2:]), "split": a.split, "source_records": len(records),
                 "fr": {"records": len(fr), "questions": len({(r["_meta"]["orig_id"], r["_meta"]["qid"]) for r in fr}),
                        "by_task": count(fr, "task"), "by_pair_cat": count(fr, "pair_cat")},
                 "pg": {"records": len(pg), "questions": len({(r["_meta"]["orig_id"], r["_meta"]["qid"]) for r in pg}),
