@@ -8,6 +8,7 @@
 Writes results/<exp>/table-<split>.md and prints it. Standard library only.
 """
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -20,6 +21,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SUITES = {"dv7": "decision-v7", "tv4": "transfer-v4"}
 FR_COLS = [("kev_seen", "seen"), ("a1_train", "A1-train"), ("heldout", "held-out"), ("random_test", "random")]
 PG_COLS = ["S1", "S2", "S3"]
+
+
+def flat(kind, stats):
+    """Every number of a stats block as "<group>.<field>" (the same keys as metrics.headline)."""
+    return {f"{k}.{f}": v for k, d in stats.items() for f, v in d.items() if isinstance(v, float)}
 
 
 def fmt(v, c=None, signed=False):
@@ -55,7 +61,7 @@ def main():
     ap.add_argument("--boot", type=int, default=2000)
     a = ap.parse_args()
     ref_exp = a.reference_exp or a.exp
-    lines = []
+    lines, values = [], {}
     for tag, suite in SUITES.items():
         tag = f"{tag}-{a.split}"
         if a.reference:
@@ -71,6 +77,9 @@ def main():
                 continue
             ref = lambda p: ROOT / "runs" / ref_exp / f"{a.reference}-{tag}-{p}" if a.reference else None
             fr, pg = result(a.exp, name, tag, "fr", ref("fr"), a.boot), result(a.exp, name, tag, "pg", ref("pg"), a.boot)
+            values.setdefault(suite, {})[name] = (
+                {**fr["difference"], **pg["difference"]} if a.reference else
+                {k: {"value": v, "ci95": {**fr["ci95"], **pg["ci95"]}.get(k)} for k, v in {**flat("fr", fr["stats"]), **flat("pg", pg["stats"])}.items()})
             if a.reference:
                 d = {**fr["difference"], **pg["difference"]}
                 cells = [fmt(d.get(f"{k}.delta_fr", {}).get("value"), d.get(f"{k}.delta_fr", {}).get("ci95"), True) for k, _ in FR_COLS]
@@ -86,6 +95,7 @@ def main():
     out = ROOT / "results" / a.exp / f"table-{a.split}{'-vs-' + a.reference if a.reference else ''}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(text, encoding="utf-8")
+    out.with_suffix(".json").write_text(json.dumps({"exp": a.exp, "split": a.split, "reference": a.reference, "values": values}, indent=1), encoding="utf-8")
     print(text)
     print(f"written {out}")
 
