@@ -1,0 +1,192 @@
+{
+  "probe": "/home/lmh/eece576l/project/probes/out/tv4-dev-pg.jsonl",
+  "kind": "pg",
+  "rows": "/home/lmh/eece576l/project/runs/e1/baseline-tv4-dev-pg",
+  "reference": null,
+  "units": 280,
+  "missing_rows": 0,
+  "stats": {
+    "orig": {
+      "n": 280,
+      "auroc": 0.8126,
+      "acc": 0.6821
+    },
+    "S1": {
+      "n": 280,
+      "auroc": 0.4703,
+      "acc": 0.4964,
+      "pg": 0.3423,
+      "inconsistency": 0.3137
+    },
+    "S2": {
+      "n": 280,
+      "auroc": 0.3335,
+      "acc": 0.3679,
+      "pg": 0.4791,
+      "inconsistency": 0.3809
+    },
+    "S3": {
+      "n": 280,
+      "auroc": 0.4833,
+      "acc": 0.4964,
+      "pg": 0.3293,
+      "inconsistency": 0.3035
+    }
+  },
+  "by_task": {
+    "contrastive_authorization": {
+      "orig": {
+        "n": 40,
+        "auroc": 1.0,
+        "acc": 1.0
+      },
+      "S1": {
+        "n": 40,
+        "auroc": 1.0,
+        "acc": 1.0,
+        "pg": 0.0,
+        "inconsistency": 0.0909
+      },
+      "S2": {
+        "n": 40,
+        "auroc": 0.0,
+        "acc": 0.1,
+        "pg": 1.0,
+        "inconsistency": 0.5611
+      },
+      "S3": {
+        "n": 40,
+        "auroc": 1.0,
+        "acc": 0.925,
+        "pg": 0.0,
+        "inconsistency": 0.0884
+      }
+    },
+    "paws": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.3994,
+        "acc": 0.3625
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.2368,
+        "acc": 0.375,
+        "pg": 0.1625,
+        "inconsistency": 0.1976
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.2768,
+        "acc": 0.3875,
+        "pg": 0.1225,
+        "inconsistency": 0.1993
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.3517,
+        "acc": 0.4,
+        "pg": 0.0476,
+        "inconsistency": 0.1766
+      }
+    },
+    "qnli": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.9195,
+        "acc": 0.85
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.0748,
+        "acc": 0.1875,
+        "pg": 0.8448,
+        "inconsistency": 0.7653
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.0641,
+        "acc": 0.1375,
+        "pg": 0.8554,
+        "inconsistency": 0.8092
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.0691,
+        "acc": 0.1625,
+        "pg": 0.8504,
+        "inconsistency": 0.7826
+      }
+    },
+    "tweet_offensive": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.7407,
+        "acc": 0.675
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.7593,
+        "acc": 0.675,
+        "pg": -0.0185,
+        "inconsistency": 0.0897
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.7443,
+        "acc": 0.7125,
+        "pg": -0.0036,
+        "inconsistency": 0.0441
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.755,
+        "acc": 0.7125,
+        "pg": -0.0142,
+        "inconsistency": 0.0589
+      }
+    }
+  },
+  "ci95": {
+    "orig.auroc": [
+      0.7569,
+      0.8622
+    ],
+    "S1.pg": [
+      0.2618,
+      0.4212
+    ],
+    "S1.auroc": [
+      0.3932,
+      0.544
+    ],
+    "S1.inconsistency": [
+      0.2741,
+      0.3548
+    ],
+    "S2.pg": [
+      0.3945,
+      0.5598
+    ],
+    "S2.auroc": [
+      0.2714,
+      0.3968
+    ],
+    "S2.inconsistency": [
+      0.3377,
+      0.4227
+    ],
+    "S3.pg": [
+      0.2472,
+      0.4112
+    ],
+    "S3.auroc": [
+      0.4084,
+      0.5564
+    ],
+    "S3.inconsistency": [
+      0.2616,
+      0.3464
+    ]
+  }
+}
