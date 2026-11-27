@@ -1,0 +1,220 @@
+{
+  "probe": "/home/lmh/eece576l/project/probes/out/dv7-dev-pg.jsonl",
+  "kind": "pg",
+  "rows": "/home/lmh/eece576l/project/runs/e2s3/a2-dv7-dev-pg",
+  "reference": null,
+  "units": 368,
+  "missing_rows": 0,
+  "stats": {
+    "orig": {
+      "n": 368,
+      "auroc": 0.9562,
+      "acc": 0.9022
+    },
+    "S1": {
+      "n": 368,
+      "auroc": 0.9601,
+      "acc": 0.894,
+      "pg": -0.004,
+      "inconsistency": 0.0203
+    },
+    "S2": {
+      "n": 368,
+      "auroc": 0.963,
+      "acc": 0.8967,
+      "pg": -0.0068,
+      "inconsistency": 0.016
+    },
+    "S3": {
+      "n": 368,
+      "auroc": 0.949,
+      "acc": 0.8859,
+      "pg": 0.0072,
+      "inconsistency": 0.0239
+    }
+  },
+  "by_task": {
+    "agnews_yn": {
+      "orig": {
+        "n": 160,
+        "auroc": 0.9604,
+        "acc": 0.9187
+      },
+      "S1": {
+        "n": 160,
+        "auroc": 0.9704,
+        "acc": 0.9062,
+        "pg": -0.01,
+        "inconsistency": 0.0189
+      },
+      "S2": {
+        "n": 160,
+        "auroc": 0.9742,
+        "acc": 0.9125,
+        "pg": -0.0138,
+        "inconsistency": 0.0106
+      },
+      "S3": {
+        "n": 160,
+        "auroc": 0.9637,
+        "acc": 0.8938,
+        "pg": -0.0033,
+        "inconsistency": 0.0258
+      }
+    },
+    "contrastive_age_eligibility": {
+      "orig": {
+        "n": 24,
+        "auroc": 1.0,
+        "acc": 1.0
+      },
+      "S1": {
+        "n": 24,
+        "auroc": 1.0,
+        "acc": 1.0,
+        "pg": 0.0,
+        "inconsistency": 0.0001
+      },
+      "S2": {
+        "n": 24,
+        "auroc": 1.0,
+        "acc": 1.0,
+        "pg": 0.0,
+        "inconsistency": 0.0
+      },
+      "S3": {
+        "n": 24,
+        "auroc": 1.0,
+        "acc": 1.0,
+        "pg": 0.0,
+        "inconsistency": 0.0001
+      }
+    },
+    "contrastive_return_window": {
+      "orig": {
+        "n": 24,
+        "auroc": 0.8403,
+        "acc": 0.75
+      },
+      "S1": {
+        "n": 24,
+        "auroc": 0.8403,
+        "acc": 0.75,
+        "pg": 0.0,
+        "inconsistency": 0.0395
+      },
+      "S2": {
+        "n": 24,
+        "auroc": 0.8403,
+        "acc": 0.75,
+        "pg": 0.0,
+        "inconsistency": 0.0494
+      },
+      "S3": {
+        "n": 24,
+        "auroc": 0.8403,
+        "acc": 0.75,
+        "pg": 0.0,
+        "inconsistency": 0.0346
+      }
+    },
+    "imdb": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.9543,
+        "acc": 0.8875
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.9593,
+        "acc": 0.9,
+        "pg": -0.005,
+        "inconsistency": 0.0118
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.9586,
+        "acc": 0.9,
+        "pg": -0.0044,
+        "inconsistency": 0.0084
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.9568,
+        "acc": 0.8875,
+        "pg": -0.0025,
+        "inconsistency": 0.0055
+      }
+    },
+    "yelp_yn": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.9681,
+        "acc": 0.9
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.9694,
+        "acc": 0.875,
+        "pg": -0.0013,
+        "inconsistency": 0.0322
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.9688,
+        "acc": 0.875,
+        "pg": -0.0007,
+        "inconsistency": 0.0289
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.9681,
+        "acc": 0.875,
+        "pg": 0.0,
+        "inconsistency": 0.0427
+      }
+    }
+  },
+  "ci95": {
+    "orig.auroc": [
+      0.9326,
+      0.9749
+    ],
+    "S1.pg": [
+      -0.0097,
+      0.0011
+    ],
+    "S1.auroc": [
+      0.9382,
+      0.9776
+    ],
+    "S1.inconsistency": [
+      0.0126,
+      0.0298
+    ],
+    "S2.pg": [
+      -0.0146,
+      -0.0012
+    ],
+    "S2.auroc": [
+      0.9432,
+      0.9787
+    ],
+    "S2.inconsistency": [
+      0.0103,
+      0.0224
+    ],
+    "S3.pg": [
+      -0.0,
+      0.0156
+    ],
+    "S3.auroc": [
+      0.921,
+      0.9715
+    ],
+    "S3.inconsistency": [
+      0.0155,
+      0.0343
+    ]
+  }
+}

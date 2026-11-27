@@ -1,0 +1,448 @@
+{
+  "probe": "/home/lmh/eece576l/project/probes/out/tv4-dev-fr.jsonl",
+  "kind": "fr",
+  "rows": "/home/lmh/eece576l/project/runs/e2s3/baseline-tv4-dev-fr",
+  "reference": null,
+  "units": 4512,
+  "missing_rows": 0,
+  "stats": {
+    "kev_seen": {
+      "n": 752,
+      "fr": 0.1011,
+      "bal_acc_aligned": 0.6995,
+      "auc_aligned": 0.7767,
+      "bal_acc_swapped": 0.6474,
+      "auc_swapped": 0.7197,
+      "delta_fr": 0.0785
+    },
+    "a1_train": {
+      "n": 752,
+      "fr": 0.0971,
+      "bal_acc_aligned": 0.6947,
+      "auc_aligned": 0.7705,
+      "bal_acc_swapped": 0.6541,
+      "auc_swapped": 0.7109,
+      "delta_fr": 0.0745
+    },
+    "heldout": {
+      "n": 1128,
+      "fr": 0.1241,
+      "bal_acc_aligned": 0.6993,
+      "auc_aligned": 0.772,
+      "bal_acc_swapped": 0.6534,
+      "auc_swapped": 0.7152,
+      "delta_fr": 0.1015
+    },
+    "neutral": {
+      "n": 752,
+      "fr": 0.0226,
+      "bal_acc_aligned": 0.696,
+      "auc_aligned": 0.7736,
+      "bal_acc_swapped": 0.7028,
+      "auc_swapped": 0.7729,
+      "delta_fr": 0.0
+    },
+    "random_test": {
+      "n": 1128,
+      "fr": 0.0098,
+      "bal_acc_aligned": 0.7005,
+      "auc_aligned": 0.7717,
+      "bal_acc_swapped": 0.7044,
+      "auc_swapped": 0.7744,
+      "delta_fr": -0.0129
+    }
+  },
+  "by_task": {
+    "composition_held_and_or": {
+      "kev_seen": {
+        "n": 64,
+        "fr": 0.0312,
+        "bal_acc_aligned": 0.5917,
+        "auc_aligned": 0.6813,
+        "bal_acc_swapped": 0.6167,
+        "auc_swapped": 0.6375,
+        "delta_fr": 0.0312
+      },
+      "a1_train": {
+        "n": 64,
+        "fr": 0.0469,
+        "bal_acc_aligned": 0.5917,
+        "auc_aligned": 0.6792,
+        "bal_acc_swapped": 0.6292,
+        "auc_swapped": 0.6531,
+        "delta_fr": 0.0469
+      },
+      "heldout": {
+        "n": 96,
+        "fr": 0.0833,
+        "bal_acc_aligned": 0.5917,
+        "auc_aligned": 0.6741,
+        "bal_acc_swapped": 0.6583,
+        "auc_swapped": 0.644,
+        "delta_fr": 0.0833
+      },
+      "neutral": {
+        "n": 64,
+        "fr": 0.0,
+        "bal_acc_aligned": 0.5917,
+        "auc_aligned": 0.6646,
+        "bal_acc_swapped": 0.5917,
+        "auc_swapped": 0.6781,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 96,
+        "fr": 0.0,
+        "bal_acc_aligned": 0.5917,
+        "auc_aligned": 0.6745,
+        "bal_acc_swapped": 0.5917,
+        "auc_swapped": 0.6653,
+        "delta_fr": 0.0
+      }
+    },
+    "composition_held_conditional": {
+      "kev_seen": {
+        "n": 64,
+        "fr": 0.0156,
+        "bal_acc_aligned": 0.4841,
+        "auc_aligned": 0.4861,
+        "bal_acc_swapped": 0.498,
+        "auc_swapped": 0.4891,
+        "delta_fr": -0.0156
+      },
+      "a1_train": {
+        "n": 64,
+        "fr": 0.0156,
+        "bal_acc_aligned": 0.498,
+        "auc_aligned": 0.4792,
+        "bal_acc_swapped": 0.5119,
+        "auc_swapped": 0.4593,
+        "delta_fr": -0.0156
+      },
+      "heldout": {
+        "n": 96,
+        "fr": 0.0625,
+        "bal_acc_aligned": 0.4656,
+        "auc_aligned": 0.4916,
+        "bal_acc_swapped": 0.4788,
+        "auc_swapped": 0.4771,
+        "delta_fr": 0.0312
+      },
+      "neutral": {
+        "n": 64,
+        "fr": 0.0312,
+        "bal_acc_aligned": 0.498,
+        "auc_aligned": 0.4901,
+        "bal_acc_swapped": 0.498,
+        "auc_swapped": 0.4841,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 96,
+        "fr": 0.0,
+        "bal_acc_aligned": 0.5119,
+        "auc_aligned": 0.4868,
+        "bal_acc_swapped": 0.5119,
+        "auc_swapped": 0.496,
+        "delta_fr": -0.0312
+      }
+    },
+    "composition_held_or_not": {
+      "kev_seen": {
+        "n": 64,
+        "fr": 0.0469,
+        "bal_acc_aligned": 0.5238,
+        "auc_aligned": 0.63,
+        "bal_acc_swapped": 0.5774,
+        "auc_swapped": 0.6111,
+        "delta_fr": 0.0312
+      },
+      "a1_train": {
+        "n": 64,
+        "fr": 0.0469,
+        "bal_acc_aligned": 0.5774,
+        "auc_aligned": 0.629,
+        "bal_acc_swapped": 0.631,
+        "auc_swapped": 0.6131,
+        "delta_fr": 0.0312
+      },
+      "heldout": {
+        "n": 96,
+        "fr": 0.1875,
+        "bal_acc_aligned": 0.5238,
+        "auc_aligned": 0.631,
+        "bal_acc_swapped": 0.5899,
+        "auc_swapped": 0.6142,
+        "delta_fr": 0.1719
+      },
+      "neutral": {
+        "n": 64,
+        "fr": 0.0156,
+        "bal_acc_aligned": 0.6171,
+        "auc_aligned": 0.6359,
+        "bal_acc_swapped": 0.631,
+        "auc_swapped": 0.6488,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 96,
+        "fr": 0.0,
+        "bal_acc_aligned": 0.631,
+        "auc_aligned": 0.6301,
+        "bal_acc_swapped": 0.631,
+        "auc_swapped": 0.6239,
+        "delta_fr": -0.0156
+      }
+    },
+    "contrastive_authorization": {
+      "kev_seen": {
+        "n": 80,
+        "fr": 0.0125,
+        "bal_acc_aligned": 1.0,
+        "auc_aligned": 1.0,
+        "bal_acc_swapped": 0.9875,
+        "auc_swapped": 1.0,
+        "delta_fr": 0.0125
+      },
+      "a1_train": {
+        "n": 80,
+        "fr": 0.0125,
+        "bal_acc_aligned": 1.0,
+        "auc_aligned": 1.0,
+        "bal_acc_swapped": 0.9875,
+        "auc_swapped": 1.0,
+        "delta_fr": 0.0125
+      },
+      "heldout": {
+        "n": 120,
+        "fr": 0.0,
+        "bal_acc_aligned": 1.0,
+        "auc_aligned": 1.0,
+        "bal_acc_swapped": 1.0,
+        "auc_swapped": 1.0,
+        "delta_fr": 0.0
+      },
+      "neutral": {
+        "n": 80,
+        "fr": 0.0,
+        "bal_acc_aligned": 1.0,
+        "auc_aligned": 1.0,
+        "bal_acc_swapped": 1.0,
+        "auc_swapped": 1.0,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 120,
+        "fr": 0.0,
+        "bal_acc_aligned": 1.0,
+        "auc_aligned": 1.0,
+        "bal_acc_swapped": 1.0,
+        "auc_swapped": 1.0,
+        "delta_fr": 0.0
+      }
+    },
+    "paws": {
+      "kev_seen": {
+        "n": 160,
+        "fr": 0.2125,
+        "bal_acc_aligned": 0.5603,
+        "auc_aligned": 0.6656,
+        "bal_acc_swapped": 0.4571,
+        "auc_swapped": 0.4698,
+        "delta_fr": 0.175
+      },
+      "a1_train": {
+        "n": 160,
+        "fr": 0.1812,
+        "bal_acc_aligned": 0.5492,
+        "auc_aligned": 0.6684,
+        "bal_acc_swapped": 0.4595,
+        "auc_swapped": 0.4876,
+        "delta_fr": 0.1437
+      },
+      "heldout": {
+        "n": 240,
+        "fr": 0.225,
+        "bal_acc_aligned": 0.5556,
+        "auc_aligned": 0.6336,
+        "bal_acc_swapped": 0.4656,
+        "auc_swapped": 0.5218,
+        "delta_fr": 0.1875
+      },
+      "neutral": {
+        "n": 160,
+        "fr": 0.0375,
+        "bal_acc_aligned": 0.5381,
+        "auc_aligned": 0.67,
+        "bal_acc_swapped": 0.5492,
+        "auc_swapped": 0.6746,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 240,
+        "fr": 0.0167,
+        "bal_acc_aligned": 0.5196,
+        "auc_aligned": 0.6487,
+        "bal_acc_swapped": 0.5344,
+        "auc_swapped": 0.6566,
+        "delta_fr": -0.0208
+      }
+    },
+    "qnli": {
+      "kev_seen": {
+        "n": 160,
+        "fr": 0.175,
+        "bal_acc_aligned": 0.8334,
+        "auc_aligned": 0.8928,
+        "bal_acc_swapped": 0.7326,
+        "auc_swapped": 0.8724,
+        "delta_fr": 0.1687
+      },
+      "a1_train": {
+        "n": 160,
+        "fr": 0.1938,
+        "bal_acc_aligned": 0.8267,
+        "auc_aligned": 0.8892,
+        "bal_acc_swapped": 0.7093,
+        "auc_swapped": 0.8804,
+        "delta_fr": 0.1875
+      },
+      "heldout": {
+        "n": 240,
+        "fr": 0.1625,
+        "bal_acc_aligned": 0.8334,
+        "auc_aligned": 0.8834,
+        "bal_acc_swapped": 0.7319,
+        "auc_swapped": 0.8779,
+        "delta_fr": 0.1562
+      },
+      "neutral": {
+        "n": 160,
+        "fr": 0.0063,
+        "bal_acc_aligned": 0.8199,
+        "auc_aligned": 0.9049,
+        "bal_acc_swapped": 0.8267,
+        "auc_swapped": 0.9093,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 240,
+        "fr": 0.0125,
+        "bal_acc_aligned": 0.8199,
+        "auc_aligned": 0.9065,
+        "bal_acc_swapped": 0.8328,
+        "auc_swapped": 0.9072,
+        "delta_fr": 0.0063
+      }
+    },
+    "tweet_offensive": {
+      "kev_seen": {
+        "n": 160,
+        "fr": 0.0437,
+        "bal_acc_aligned": 0.7258,
+        "auc_aligned": 0.76,
+        "bal_acc_swapped": 0.6934,
+        "auc_swapped": 0.7623,
+        "delta_fr": 0.0
+      },
+      "a1_train": {
+        "n": 160,
+        "fr": 0.0312,
+        "bal_acc_aligned": 0.7026,
+        "auc_aligned": 0.7532,
+        "bal_acc_swapped": 0.7165,
+        "auc_swapped": 0.7596,
+        "delta_fr": -0.0125
+      },
+      "heldout": {
+        "n": 240,
+        "fr": 0.0625,
+        "bal_acc_aligned": 0.735,
+        "auc_aligned": 0.7631,
+        "bal_acc_swapped": 0.7011,
+        "auc_swapped": 0.7546,
+        "delta_fr": 0.0188
+      },
+      "neutral": {
+        "n": 160,
+        "fr": 0.0437,
+        "bal_acc_aligned": 0.7016,
+        "auc_aligned": 0.7562,
+        "bal_acc_swapped": 0.7162,
+        "auc_swapped": 0.7541,
+        "delta_fr": 0.0
+      },
+      "random_test": {
+        "n": 240,
+        "fr": 0.0167,
+        "bal_acc_aligned": 0.7282,
+        "auc_aligned": 0.7555,
+        "bal_acc_swapped": 0.7153,
+        "auc_swapped": 0.7513,
+        "delta_fr": -0.0271
+      }
+    }
+  },
+  "ci95": {
+    "kev_seen.fr": [
+      0.0735,
+      0.1313
+    ],
+    "kev_seen.delta_fr": [
+      0.0517,
+      0.1071
+    ],
+    "kev_seen.auc_swapped": [
+      0.6636,
+      0.7751
+    ],
+    "a1_train.fr": [
+      0.0714,
+      0.127
+    ],
+    "a1_train.delta_fr": [
+      0.0486,
+      0.1032
+    ],
+    "a1_train.auc_swapped": [
+      0.6561,
+      0.7659
+    ],
+    "heldout.fr": [
+      0.0925,
+      0.1566
+    ],
+    "heldout.delta_fr": [
+      0.072,
+      0.1317
+    ],
+    "heldout.auc_swapped": [
+      0.6597,
+      0.7686
+    ],
+    "neutral.fr": [
+      0.0102,
+      0.0374
+    ],
+    "neutral.delta_fr": [
+      0.0,
+      0.0
+    ],
+    "neutral.auc_swapped": [
+      0.7175,
+      0.8272
+    ],
+    "random_test.fr": [
+      0.0043,
+      0.0163
+    ],
+    "random_test.delta_fr": [
+      -0.0251,
+      -0.0025
+    ],
+    "random_test.auc_swapped": [
+      0.7184,
+      0.8291
+    ]
+  }
+}
