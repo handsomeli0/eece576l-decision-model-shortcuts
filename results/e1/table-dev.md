@@ -1,4 +1,4 @@
-### decision-v7 dev (95% group bootstrap)
+### decision-v7 dev, all questions (95% group bootstrap)
 
 | model | FR neutral | FR seen | FR A1-train | FR held-out | FR random | dFR seen [CI] | dFR A1-train [CI] | dFR held-out [CI] | AUROC orig | PG S1 [CI] | PG S2 [CI] | PG S3 [CI] |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -6,7 +6,7 @@
 | qwen | 0.149 | 0.205 | 0.123 | 0.293 | 0.099 | +0.055 [+0.03, +0.08] | -0.026 [-0.06, +0.00] | +0.144 [+0.11, +0.17] | 0.861 | +0.300 [+0.24, +0.36] | +0.371 [+0.29, +0.45] | +0.399 [+0.33, +0.46] |
 | v7base | 0.008 | 0.011 | 0.011 | 0.016 | 0.004 | +0.003 [-0.00, +0.01] | +0.003 [-0.00, +0.01] | +0.008 [+0.00, +0.01] | 0.966 | +0.308 [+0.25, +0.37] | +0.391 [+0.33, +0.46] | +0.181 [+0.13, +0.23] |
 
-### transfer-v4 dev (95% group bootstrap)
+### transfer-v4 dev, all questions (95% group bootstrap)
 
 | model | FR neutral | FR seen | FR A1-train | FR held-out | FR random | dFR seen [CI] | dFR A1-train [CI] | dFR held-out [CI] | AUROC orig | PG S1 [CI] | PG S2 [CI] | PG S3 [CI] |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|

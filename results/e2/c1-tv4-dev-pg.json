@@ -1,0 +1,192 @@
+{
+  "probe": "/home/lmh/eece576l/project/probes/out/tv4-dev-pg.jsonl",
+  "kind": "pg",
+  "rows": "/home/lmh/eece576l/project/runs/e2/c1-tv4-dev-pg",
+  "reference": null,
+  "units": 280,
+  "missing_rows": 0,
+  "stats": {
+    "orig": {
+      "n": 280,
+      "auroc": 0.812,
+      "acc": 0.7107
+    },
+    "S1": {
+      "n": 280,
+      "auroc": 0.41,
+      "acc": 0.3786,
+      "pg": 0.4019,
+      "inconsistency": 0.3816
+    },
+    "S2": {
+      "n": 280,
+      "auroc": 0.3956,
+      "acc": 0.3714,
+      "pg": 0.4164,
+      "inconsistency": 0.3833
+    },
+    "S3": {
+      "n": 280,
+      "auroc": 0.4532,
+      "acc": 0.45,
+      "pg": 0.3588,
+      "inconsistency": 0.3363
+    }
+  },
+  "by_task": {
+    "contrastive_authorization": {
+      "orig": {
+        "n": 40,
+        "auroc": 1.0,
+        "acc": 0.95
+      },
+      "S1": {
+        "n": 40,
+        "auroc": 0.0,
+        "acc": 0.0,
+        "pg": 1.0,
+        "inconsistency": 0.6656
+      },
+      "S2": {
+        "n": 40,
+        "auroc": 0.0,
+        "acc": 0.0,
+        "pg": 1.0,
+        "inconsistency": 0.6754
+      },
+      "S3": {
+        "n": 40,
+        "auroc": 0.6275,
+        "acc": 0.5,
+        "pg": 0.3725,
+        "inconsistency": 0.3788
+      }
+    },
+    "paws": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.6749,
+        "acc": 0.4875
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.7276,
+        "acc": 0.4625,
+        "pg": -0.0527,
+        "inconsistency": 0.0577
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.7181,
+        "acc": 0.4375,
+        "pg": -0.0432,
+        "inconsistency": 0.0624
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.7314,
+        "acc": 0.4375,
+        "pg": -0.0565,
+        "inconsistency": 0.066
+      }
+    },
+    "qnli": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.8762,
+        "acc": 0.8375
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.11,
+        "acc": 0.1625,
+        "pg": 0.7662,
+        "inconsistency": 0.8602
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.0968,
+        "acc": 0.1875,
+        "pg": 0.7794,
+        "inconsistency": 0.8798
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.1069,
+        "acc": 0.175,
+        "pg": 0.7693,
+        "inconsistency": 0.8533
+      }
+    },
+    "tweet_offensive": {
+      "orig": {
+        "n": 80,
+        "auroc": 0.698,
+        "acc": 0.6875
+      },
+      "S1": {
+        "n": 80,
+        "auroc": 0.7343,
+        "acc": 0.7,
+        "pg": -0.0363,
+        "inconsistency": 0.0849
+      },
+      "S2": {
+        "n": 80,
+        "auroc": 0.7286,
+        "acc": 0.675,
+        "pg": -0.0306,
+        "inconsistency": 0.0616
+      },
+      "S3": {
+        "n": 80,
+        "auroc": 0.7301,
+        "acc": 0.7125,
+        "pg": -0.0321,
+        "inconsistency": 0.0681
+      }
+    }
+  },
+  "ci95": {
+    "orig.auroc": [
+      0.7532,
+      0.8627
+    ],
+    "S1.pg": [
+      0.3104,
+      0.4896
+    ],
+    "S1.auroc": [
+      0.3439,
+      0.48
+    ],
+    "S1.inconsistency": [
+      0.332,
+      0.4301
+    ],
+    "S2.pg": [
+      0.3214,
+      0.5053
+    ],
+    "S2.auroc": [
+      0.3278,
+      0.4656
+    ],
+    "S2.inconsistency": [
+      0.3334,
+      0.4338
+    ],
+    "S3.pg": [
+      0.2711,
+      0.4439
+    ],
+    "S3.auroc": [
+      0.3828,
+      0.5251
+    ],
+    "S3.inconsistency": [
+      0.2911,
+      0.3807
+    ]
+  }
+}
