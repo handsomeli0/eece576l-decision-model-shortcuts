@@ -52,6 +52,7 @@ analysis/metrics.py    FR, ΔFR, balanced accuracy, AUC, AUROC, PG, inconsistenc
 analysis/table.py      Tables 1 and 2 (Markdown plus a JSON of every value)
 analysis/seeds.py      every variant minus its same-seed baseline, per seed and averaged (seeds 2 and 3)
 analysis/figures.py    presentation figures from those JSON files
+analysis/accuracy.py   Kev benchmark accuracy, NLL, ECE, Brier per model, and each variant minus its baseline
 scripts/               env.sh (paths and the training recipe), prepare.sh, check_kev.sh, check_data_path.sh,
                        e1.sh, train.sh, score.sh, test_all.sh, export_train.py
 third_party/kev        Kev at the pinned commit (git submodule)
@@ -76,6 +77,8 @@ python analysis/table.py --exp e2 --split dev --reference baseline --reference-e
 scripts/tables.sh dev               # every table, including slices (policy, nodef, ...), and the figures
 ```
 
-The test splits are scored once, at the end, for every model: `scripts/test_all.sh` (about 5 h on an 8 GB GPU).
+The test splits are scored once, at the end, for every model (seed 2 and seed 3): `scripts/test_all.sh` (about 8.5 h
+on an 8 GB GPU; it skips finished steps, so it can be restarted). It ends with `analysis/accuracy.py --split test` and
+`scripts/tables.sh test`.
 Figures: `python analysis/figures.py --table results/e2/table-dev-vs-baseline.json` (needs matplotlib).
 Everything is deterministic for a given seed (default 2, the seed of Kev's stage-1 run).

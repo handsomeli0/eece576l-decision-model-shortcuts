@@ -15,6 +15,8 @@ python analysis/figures.py --table "results/e2/table-$split-vs-baseline.json" --
 # seed average (seed 2 in e1/e2, seed 3 in e2s3), once the seed-3 runs exist
 if ls runs/e2s3/*-"$split"-fr > /dev/null 2>&1; then
   for sl in all policy nodef paws-qnli; do
+    python analysis/table.py --exp e2s3 --split "$split" --slice $sl > /dev/null
+    python analysis/table.py --exp e2s3 --split "$split" --slice $sl --reference baseline > /dev/null
     python analysis/seeds.py --split "$split" --slice $sl > /dev/null
     echo "seed tables done: $sl"
   done
