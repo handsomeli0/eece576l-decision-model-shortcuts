@@ -50,7 +50,8 @@ probes/review/         a 50-item sample for hand-checking (sample-50.md)
 augment/make.py        A1, A2, A1+A2, C1 training files
 analysis/metrics.py    FR, ΔFR, balanced accuracy, AUC, AUROC, PG, inconsistency, group bootstrap
 analysis/table.py      Tables 1 and 2 (Markdown plus a JSON of every value)
-analysis/figures.py    presentation figures from that JSON
+analysis/seeds.py      every variant minus its same-seed baseline, per seed and averaged (seeds 2 and 3)
+analysis/figures.py    presentation figures from those JSON files
 scripts/               env.sh (paths and the training recipe), prepare.sh, check_kev.sh, check_data_path.sh,
                        e1.sh, train.sh, score.sh, test_all.sh, export_train.py
 third_party/kev        Kev at the pinned commit (git submodule)

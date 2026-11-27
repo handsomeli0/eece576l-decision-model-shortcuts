@@ -32,17 +32,22 @@ def panel(ax, values, groups, title, present):
     n = len(present)
     width = 0.8 / max(n, 1)
     for i, m in enumerate(present):
-        xs, ys, lo, hi = [], [], [], []
+        xs, ys, lo, hi, dots = [], [], [], [], []
         for g, (key, _) in enumerate(groups):
             d = values[m].get(key)
-            if not d or d.get("value") is None:
+            v = None if not d else d.get("value", d.get("mean"))    # table.py JSON: value; seeds.py JSON: mean over seeds
+            if v is None:
                 continue
             x = g - 0.4 + width * (i + 0.5)
-            ci = d.get("ci95") or [d["value"], d["value"]]
-            xs.append(x); ys.append(d["value"]); lo.append(d["value"] - ci[0]); hi.append(ci[1] - d["value"])
+            ci = d.get("ci95") or [v, v]
+            xs.append(x); ys.append(v); lo.append(v - ci[0]); hi.append(ci[1] - v)
+            dots += [(x, sv) for sv in (d.get("seeds") or {}).values() if len(d["seeds"]) > 1]
         ax.bar(xs, ys, width=width, color=COLORS[m], edgecolor=SURFACE, linewidth=2, zorder=2,
                label=dict(MODELS)[m])
         ax.errorbar(xs, ys, yerr=[lo, hi], fmt="none", ecolor=INK2, elinewidth=1.2, capsize=0, zorder=3)
+        if dots:   # one dot per seed, so the seed-to-seed spread is visible next to the interval
+            ax.scatter([x for x, _ in dots], [y for _, y in dots], s=22, color=INK, edgecolor=SURFACE, linewidth=1.2, zorder=5,
+                       label="single seed" if i == 0 else None)
     ax.axhline(0, color=INK, linewidth=1, zorder=4)
     ax.set_xticks(range(len(groups)), [label for _, label in groups])
     ax.set_title(title, loc="left", color=INK, fontsize=12, fontweight="semibold", pad=10)
@@ -54,7 +59,7 @@ def panel(ax, values, groups, title, present):
     ax.tick_params(colors=INK2, length=0, labelsize=9.5)
 
 
-def figure(suite, values, split, out):
+def figure(suite, values, split, out, seeds=False, slice_=None):
     present = [m for m, _ in MODELS if m in values]
     fig, (left, right) = plt.subplots(1, 2, figsize=(11, 4.2), gridspec_kw={"width_ratios": [2, 3]})
     fig.patch.set_facecolor(SURFACE)
@@ -62,12 +67,15 @@ def figure(suite, values, split, out):
     panel(right, values, PG_GROUPS, "Negated wording: change in PG", present)
     left.set_ylabel("variant minus baseline\n(below 0 = failure reduced)", color=INK2, fontsize=9.5)
     handles, labels = left.get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper left", ncol=len(present), frameon=False, fontsize=9.5,
+    order = sorted(range(len(labels)), key=lambda i: labels[i] == "single seed")   # models first, the seed dot last
+    handles, labels = [handles[i] for i in order], [labels[i] for i in order]
+    fig.legend(handles, labels, loc="upper left", ncol=len(handles), frameon=False, fontsize=9.5,
                labelcolor=INK, bbox_to_anchor=(0.003, 0.95))
-    fig.suptitle(f"{suite} {split}: each fix vs the baseline (95% paired bootstrap)", x=0.01, ha="left",
+    what = "mean of seeds 2 and 3 vs same-seed baseline (95% joint bootstrap; dots = single seeds)" if seeds else "each fix vs the baseline (95% paired bootstrap)"
+    fig.suptitle(f"{suite} {split}{'' if slice_ in (None, 'all') else ' [' + slice_ + ']'}: {what}", x=0.01, ha="left",
                  color=INK, fontsize=13, fontweight="bold")
     fig.tight_layout(rect=(0, 0, 1, 0.90))
-    path = out / f"e2-{suite}-{split}.png"
+    path = out / f"e2-{suite}-{split}{'-seeds' if seeds else ''}{'' if slice_ in (None, 'all') else '-' + slice_}.png"
     fig.savefig(path, dpi=200, facecolor=SURFACE)
     plt.close(fig)
     return path
@@ -79,12 +87,12 @@ def main():
     ap.add_argument("--out", default="results/figures")
     a = ap.parse_args()
     t = json.loads(Path(a.table).read_text(encoding="utf-8"))
-    if not t.get("reference"):
-        raise SystemExit("this figure needs a table made with --reference")
+    if not t.get("reference") and "seeds" not in t:
+        raise SystemExit("this figure needs a table made with --reference, or analysis/seeds.py output")
     plt.rcParams["font.family"] = font()
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     for suite, values in t["values"].items():
-        print(figure(suite, values, t["split"], out))
+        print(figure(suite, values, t["split"], out, seeds="seeds" in t, slice_=t.get("slice")))
 
 
 if __name__ == "__main__":
