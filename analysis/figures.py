@@ -62,11 +62,11 @@ def figure(suite, values, split, out):
     panel(right, values, PG_GROUPS, "Negated wording: change in PG", present)
     left.set_ylabel("variant minus baseline\n(below 0 = failure reduced)", color=INK2, fontsize=9.5)
     handles, labels = left.get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper right", ncol=len(present), frameon=False, fontsize=9.5,
-               labelcolor=INK, bbox_to_anchor=(0.99, 1.0))
+    fig.legend(handles, labels, loc="upper left", ncol=len(present), frameon=False, fontsize=9.5,
+               labelcolor=INK, bbox_to_anchor=(0.003, 0.95))
     fig.suptitle(f"{suite} {split}: each fix vs the baseline (95% paired bootstrap)", x=0.01, ha="left",
                  color=INK, fontsize=13, fontweight="bold")
-    fig.tight_layout(rect=(0, 0, 1, 0.96))
+    fig.tight_layout(rect=(0, 0, 1, 0.90))
     path = out / f"e2-{suite}-{split}.png"
     fig.savefig(path, dpi=200, facecolor=SURFACE)
     plt.close(fig)
